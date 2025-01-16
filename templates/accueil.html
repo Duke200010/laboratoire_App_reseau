@@ -18,7 +18,7 @@
         </form>
     {% else %}
         <p>Bonjour {{ nom }} de {{ ville }}, bienvenue sur notre site.</p>
-        <a href="{{ url_for('accueil') }}">Changez mon identité</a>
+        <a href="accueil.html">Changez mon identité</a>
     {% endif %}
     
     <img src="{{ url_for('static', filename='code.jpg') }}" >

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import html
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder = "static",template_folder= "templates")
 
 @app.route("/", methods=["GET", "POST"])
 def accueil():
@@ -13,9 +13,6 @@ def accueil():
     
     return render_template("accueil.html", formulaire=True)
 
-@app.route("/static/<path:filename>")
-def static_file(filename):
-    return app.send_static_file(filename)
 
 @app.errorhandler(404)
 def page_not_found(error):
